@@ -29,15 +29,16 @@ namespace Task_01
             {
                 char currentChar = inputString[i];
                 if (currentChar == previousChar)
+				{
                     count++;
+				}
                 else
                 {
-
                     if (max < count)
                         max = count;
                     count = 1;
                 }
-
+				
                 previousChar = currentChar;
             }
 
@@ -53,14 +54,14 @@ namespace Task_01
         //Entry point
         static void Main(string[] args)
         {
-            ConsecutiveSequance test = new ConsecutiveSequance();
             if (args.Length != 1)
             {
                 Console.WriteLine("Run program with one argument!");
             }
             else
             {
-                Console.WriteLine(test.getMaxConsecutiveSequnce(args[0]));
+				ConsecutiveSequance test = new ConsecutiveSequance();
+				Console.WriteLine(test.getMaxConsecutiveSequnce(args[0]));
             }
         }
     }
