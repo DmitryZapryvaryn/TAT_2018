@@ -1,48 +1,35 @@
 ﻿using System;
 using System.Text;
 
-
 namespace Task_02
 {
     /// <summary>
     /// This class contains method which find substring with even characters
     /// </summary>
-    class EvenChar
+    class EvenCharStringBuilder
     {
         /// <summary>
         /// Method finds even char from input sring.
         /// </summary>
-        /// <param name="inputString">Character sequance.</param>
+        /// <param name="inputString">Character sequence.</param>
         /// <returns>
-        /// Substring contains even char from input string.
+        /// StringBuilder which contains even char from input string.
         /// </returns>
-        public StringBuilder getEvenCharSequance(string inputString)
+        public StringBuilder GetEvenCharSequence(string inputString)
         {
             StringBuilder result = new StringBuilder();
-            if (inputString.Length == 0)
+            for(int i = 0; i < inputString.Length; i += 2)
             {
-                throw new ArgumentNullException();
-            }
-            else
-            {
-                for(int i = 0; i < inputString.Length; i++)
-                {
-                    if( i % 2 == 0 )
-                    {
-                        result.Append(inputString[i]);
-                    }
-                }
+                result.Append(inputString[i]);
             }
             return result;
         }
-
-        //Only for test program
         //Entry point
         static void Main(string[] args)
         {
-            EvenChar evenChar = new EvenChar();
+            EvenCharStringBuilder evenChar = new EvenCharStringBuilder();
             string buffer = Console.ReadLine();
-            Console.WriteLine(evenChar.getEvenCharSequance(buffer));
+            Console.WriteLine(evenChar.GetEvenCharSequence(buffer));
         }
     }    
 }
