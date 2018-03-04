@@ -9,9 +9,9 @@ namespace Task_02
     class EvenCharStringBuilder
     {
         /// <summary>
-        /// Method finds even char from input sring.
+        /// Method finds even char from input string.
         /// </summary>
-        /// <param name="inputString">Character sequence.</param>
+        /// <param name="inputString">String where need to find even char.</param>
         /// <returns>
         /// StringBuilder which contains even char from input string.
         /// </returns>
@@ -24,7 +24,7 @@ namespace Task_02
             }
             return result;
         }
-        //Entry point
+
         static void Main(string[] args)
         {
             EvenCharStringBuilder evenChar = new EvenCharStringBuilder();
