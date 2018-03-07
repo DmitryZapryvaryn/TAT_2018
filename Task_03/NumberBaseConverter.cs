@@ -19,8 +19,14 @@ namespace Task_03
         /// <param name="sourceNumber">A number which need to convert to other base.</param>
         /// <param name="newBase">New numeric system.</param>
         /// <returns>Number in new numeric system as StringBuilder.</returns>
+        /// <exception cref="BaseOutOfRangeException">If new numeric system have illegal value( new base less then 2 or more than 20).</exception>
         public StringBuilder GetChangedNumber(uint sourceNumber, uint newBase)
         {
+            if (newBase < 2 || newBase > 20)
+            {
+                throw new BaseOutOfRangeException();
+            }
+
             StringBuilder resultNumber = new StringBuilder();
             if (sourceNumber == 0)
             {
@@ -52,10 +58,6 @@ namespace Task_03
                 NumberBaseConverter radixChanger = new NumberBaseConverter();
                 uint inputNumber = UInt32.Parse(args[0]);
                 uint newBase = UInt32.Parse(args[1]);
-                if(newBase < 2 || newBase > 20)
-                {
-                    throw new BaseOutOfRangeException();
-                }
                 Console.WriteLine(radixChanger.GetChangedNumber(inputNumber, newBase));
             }
             catch(Exception e)
