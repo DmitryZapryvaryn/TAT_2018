@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Numerics;
 
 namespace Task_03
 {
@@ -11,7 +12,7 @@ namespace Task_03
         //If base of new number > 10 we need to use char A,B,C... in number.
         //65 in ASCII is 'A'.
         //Char code = 65 + (remainder - 10) => char code = 55 + remainder.  
-        private const ushort AsciiStartChar = 55;
+        private const byte AsciiStartChar = 55;
 
         /// <summary>
         /// The method converts number from decimal base to new base. 
@@ -20,23 +21,29 @@ namespace Task_03
         /// <param name="newBase">New numeric system.</param>
         /// <returns>Number in new numeric system as StringBuilder.</returns>
         /// <exception cref="ArgumentOutOfRangeException">If new numeric system have illegal value( new base less then 2 or more than 20).</exception>
-        public StringBuilder GetChangedNumber(uint sourceNumber, uint newBase)
+        /// <exception cref="ArgumentException">Source number must be positive</exception>
+        public StringBuilder GetChangedNumber(BigInteger sourceNumber, int newBase)
         {
             if (newBase < 2 || newBase > 20)
             {
                 throw new ArgumentOutOfRangeException("newBase");
             }
 
+            if(sourceNumber < 0)
+            {
+                throw new ArgumentException("Source number must be positive", "sourceNumber");
+            }
+
             StringBuilder resultNumber = new StringBuilder();
-            if (sourceNumber == 0)
+            if (sourceNumber.IsZero)
             {
                 return resultNumber.Append(0);
             }
 
-            uint remainder;
+            int remainder;
             while(sourceNumber > 0)
             {
-                remainder = sourceNumber % newBase;
+                remainder = (int)(sourceNumber % newBase);
                 if(remainder > 9)
                 {
                     resultNumber.Insert(0, (char)(remainder + AsciiStartChar));
@@ -56,8 +63,8 @@ namespace Task_03
             try
             {
                 NumberBaseConverter radixChanger = new NumberBaseConverter();
-                uint inputNumber = UInt32.Parse(args[0]);
-                uint newBase = UInt32.Parse(args[1]);
+                BigInteger inputNumber = BigInteger.Parse(args[0]);
+                int newBase = Int16.Parse(args[1]);
                 Console.WriteLine(radixChanger.GetChangedNumber(inputNumber, newBase));
             }
             catch(Exception e)
