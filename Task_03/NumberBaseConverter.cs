@@ -19,12 +19,12 @@ namespace Task_03
         /// <param name="sourceNumber">A number which need to convert to other base.</param>
         /// <param name="newBase">New numeric system.</param>
         /// <returns>Number in new numeric system as StringBuilder.</returns>
-        /// <exception cref="BaseOutOfRangeException">If new numeric system have illegal value( new base less then 2 or more than 20).</exception>
+        /// <exception cref="ArgumentOutOfRangeException">If new numeric system have illegal value( new base less then 2 or more than 20).</exception>
         public StringBuilder GetChangedNumber(uint sourceNumber, uint newBase)
         {
             if (newBase < 2 || newBase > 20)
             {
-                throw new BaseOutOfRangeException();
+                throw new ArgumentOutOfRangeException("newBase");
             }
 
             StringBuilder resultNumber = new StringBuilder();
@@ -63,6 +63,7 @@ namespace Task_03
             catch(Exception e)
             {
                 Console.WriteLine("Error: " + e.Message);
+                Console.WriteLine(e.StackTrace);
             }
         }
     }
