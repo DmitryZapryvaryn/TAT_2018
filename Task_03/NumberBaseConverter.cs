@@ -19,10 +19,10 @@ namespace Task_03
         /// </summary>
         /// <param name="sourceNumber">A number which need to convert to other base.</param>
         /// <param name="newBase">New numeric system.</param>
-        /// <returns>Number in new numeric system as StringBuilder.</returns>
+        /// <returns>Number's presentation in new numeric system as StringBuilder.</returns>
         /// <exception cref="ArgumentOutOfRangeException">If new numeric system have illegal value( new base less then 2 or more than 20).</exception>
         /// <exception cref="ArgumentException">Source number must be positive</exception>
-        public StringBuilder GetChangedNumber(BigInteger sourceNumber, int newBase)
+        public StringBuilder GetNewNumberPresentation(BigInteger sourceNumber, int newBase)
         {
             if (newBase < 2 || newBase > 20)
             {
@@ -40,10 +40,9 @@ namespace Task_03
                 return resultNumber.Append(0);
             }
 
-            int remainder;
             while(sourceNumber > 0)
             {
-                remainder = (int)(sourceNumber % newBase);
+                int remainder = (int)(sourceNumber % newBase);
                 if(remainder > 9)
                 {
                     resultNumber.Insert(0, (char)(remainder + AsciiStartChar));
@@ -65,7 +64,7 @@ namespace Task_03
                 NumberBaseConverter radixChanger = new NumberBaseConverter();
                 BigInteger inputNumber = BigInteger.Parse(args[0]);
                 int newBase = Int16.Parse(args[1]);
-                Console.WriteLine(radixChanger.GetChangedNumber(inputNumber, newBase));
+                Console.WriteLine(radixChanger.GetNewNumberPresentation(inputNumber, newBase));
             }
             catch(Exception e)
             {
