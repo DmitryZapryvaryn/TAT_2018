@@ -19,7 +19,7 @@ namespace Task_03
         /// <param name="sourceNumber">A number which need to convert to other base.</param>
         /// <param name="newBase">New numeric system.</param>
         /// <returns>Number in new numeric system as StringBuilder.</returns>
-        public StringBuilder ChangeNumberBase(uint sourceNumber, uint newBase)
+        public StringBuilder GetChangedNumber(uint sourceNumber, uint newBase)
         {
             StringBuilder resultNumber = new StringBuilder();
             if (sourceNumber == 0)
@@ -56,7 +56,7 @@ namespace Task_03
                 {
                     throw new BaseOutOfRangeException();
                 }
-                Console.WriteLine(radixChanger.ChangeNumberBase(inputNumber, newBase));
+                Console.WriteLine(radixChanger.GetChangedNumber(inputNumber, newBase));
             }
             catch(Exception e)
             {
