@@ -8,6 +8,11 @@ namespace Task_03
     /// </summary>
     class NumberBaseConverter
     {
+        //If base of new number > 10 we need to use char A,B,C... in number.
+        //65 in ASCII is 'A'.
+        //Char code = 65 + (remainder - 10) => char code = 55 + remainder.  
+        private const ushort AsciiStartChar = 55;
+
         /// <summary>
         /// The method converts number from decimal base to new base. 
         /// </summary>
@@ -28,7 +33,7 @@ namespace Task_03
                 remainder = sourceNumber % newBase;
                 if(remainder > 9)
                 {
-                    resultNumber.Insert(0, (char)(remainder + 55));
+                    resultNumber.Insert(0, (char)(remainder + AsciiStartChar));
                 }
                 else
                 {
@@ -40,33 +45,22 @@ namespace Task_03
             return resultNumber;
         }
 
-        private bool IsValidBase(string stringBase, out uint result)
-        {
-            return UInt32.TryParse(stringBase, out result) && (result <= 20 && result >= 2);
-        }
-
         static void Main(string[] args)
         {
-            if (args.Length != 2)
-            {
-                Console.WriteLine("Run program with two arguments: number, base.");
-            }
-            else
+            try
             {
                 NumberBaseConverter radixChanger = new NumberBaseConverter();
-                uint inputNumber;
-                uint newBase;
-                bool isDecimalNumber = UInt32.TryParse(args[0], out inputNumber);
-                bool isValidBase = radixChanger.IsValidBase(args[1], out newBase);
-                if (isDecimalNumber && isValidBase)
+                uint inputNumber = UInt32.Parse(args[0]);
+                uint newBase = UInt32.Parse(args[1]);
+                if(newBase < 2 || newBase > 20)
                 {
-                    Console.WriteLine(radixChanger.ChangeNumberBase(inputNumber, newBase));
+                    throw new BaseOutOfRangeException();
                 }
-                else
-                {
-                    Console.WriteLine("Invalid inputs!");
-                    Console.WriteLine("Please, input decimal unsigned number and base!");
-                }
+                Console.WriteLine(radixChanger.ChangeNumberBase(inputNumber, newBase));
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
             }
         }
     }
