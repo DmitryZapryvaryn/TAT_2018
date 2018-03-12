@@ -29,7 +29,7 @@ namespace Task_03
                 throw new ArgumentOutOfRangeException("newBase");
             }
 
-            if(sourceNumber < 0)
+            if (sourceNumber < 0)
             {
                 throw new ArgumentException("Source number must be positive", "sourceNumber");
             }
@@ -40,7 +40,7 @@ namespace Task_03
                 return resultNumber.Append(0);
             }
 
-            while(sourceNumber > 0)
+            while (sourceNumber > 0)
             {
                 int remainder = (int)(sourceNumber % newBase);
                 if(remainder > 9)
