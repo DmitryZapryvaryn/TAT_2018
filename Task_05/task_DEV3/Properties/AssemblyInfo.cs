@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EvenCharStringBuilder")]
+[assembly: AssemblyTitle("task_DEV-3")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EvenCharStringBuilder")]
+[assembly: AssemblyProduct("task_DEV-3")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("595dcbe8-8ee7-47d0-adfe-f1ea5312f484")]
+[assembly: Guid("6f758b24-f680-422b-9fe7-da43ddd32a47")]
 
 // Version information for an assembly consists of the following four values:
 //

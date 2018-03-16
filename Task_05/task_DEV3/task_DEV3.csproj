@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{595DCBE8-8EE7-47D0-ADFE-F1EA5312F484}</ProjectGuid>
+    <ProjectGuid>{6F758B24-F680-422B-9FE7-DA43DDD32A47}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EvenCharStringBuilder</RootNamespace>
-    <AssemblyName>EvenCharStringBuilder</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>task_DEV3</RootNamespace>
+    <AssemblyName>task_DEV3</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntryPoint.cs" />
-    <Compile Include="EvenCharStringCreator.cs" />
+    <Compile Include="NumberBaseConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
