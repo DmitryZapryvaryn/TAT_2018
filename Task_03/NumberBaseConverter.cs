@@ -9,11 +9,6 @@ namespace Task_03
     /// </summary>
     class NumberBaseConverter
     {
-        //If base of new number > 10 we need to use char A,B,C... in number.
-        //65 in ASCII is 'A'.
-        //Char code = 65 + (remainder - 10) => char code = 55 + remainder.  
-        private const byte AsciiStartChar = 55;
-
         /// <summary>
         /// The method converts number from decimal base to new base. 
         /// </summary>
@@ -24,15 +19,7 @@ namespace Task_03
         /// <exception cref="ArgumentException">Source number must be positive</exception>
         public StringBuilder GetNewNumberPresentation(BigInteger sourceNumber, int newBase)
         {
-            if (newBase < 2 || newBase > 20)
-            {
-                throw new ArgumentOutOfRangeException("newBase");
-            }
-
-            if (sourceNumber < 0)
-            {
-                throw new ArgumentException("Source number must be positive", "sourceNumber");
-            }
+            IsParametersValid(sourceNumber, newBase);
 
             StringBuilder resultNumber = new StringBuilder();
             if (sourceNumber.IsZero)
@@ -45,7 +32,7 @@ namespace Task_03
                 int remainder = (int)(sourceNumber % newBase);
                 if(remainder > 9)
                 {
-                    resultNumber.Insert(0, (char)(remainder + AsciiStartChar));
+                    resultNumber.Insert(0, (char)(remainder + 'A' - 10));
                 }
                 else
                 {
@@ -55,6 +42,19 @@ namespace Task_03
             }
 
             return resultNumber;
+        }
+
+        private void IsParametersValid(BigInteger sourceNumber, int newBase)
+        {
+            if (newBase < 2 || newBase > 20)
+            {
+                throw new ArgumentOutOfRangeException("newBase");
+            }
+
+            if (sourceNumber < 0)
+            {
+                throw new ArgumentException("Source number must be positive", "sourceNumber");
+            }
         }
 
         static void Main(string[] args)

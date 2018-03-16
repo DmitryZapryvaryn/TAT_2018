@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Task_04
+﻿namespace Task_04
 {
     class EntryPoint
     {
