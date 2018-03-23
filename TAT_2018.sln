@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task_DEV3", "Task_05\task_D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "task_DEV3.Tests", "Task_05\task_DEV3.Tests\task_DEV3.Tests.csproj", "{59226802-62A4-4927-A632-B19326F9A105}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_06", "Task_06\Task_06.csproj", "{E6C4929C-59A7-4186-A964-0BA2D92171EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -126,6 +128,18 @@ Global
 		{59226802-62A4-4927-A632-B19326F9A105}.Release|x64.Build.0 = Release|Any CPU
 		{59226802-62A4-4927-A632-B19326F9A105}.Release|x86.ActiveCfg = Release|Any CPU
 		{59226802-62A4-4927-A632-B19326F9A105}.Release|x86.Build.0 = Release|Any CPU
+		{E6C4929C-59A7-4186-A964-0BA2D92171EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6C4929C-59A7-4186-A964-0BA2D92171EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6C4929C-59A7-4186-A964-0BA2D92171EE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E6C4929C-59A7-4186-A964-0BA2D92171EE}.Debug|x64.Build.0 = Debug|Any CPU
+		{E6C4929C-59A7-4186-A964-0BA2D92171EE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E6C4929C-59A7-4186-A964-0BA2D92171EE}.Debug|x86.Build.0 = Debug|Any CPU
+		{E6C4929C-59A7-4186-A964-0BA2D92171EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6C4929C-59A7-4186-A964-0BA2D92171EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6C4929C-59A7-4186-A964-0BA2D92171EE}.Release|x64.ActiveCfg = Release|Any CPU
+		{E6C4929C-59A7-4186-A964-0BA2D92171EE}.Release|x64.Build.0 = Release|Any CPU
+		{E6C4929C-59A7-4186-A964-0BA2D92171EE}.Release|x86.ActiveCfg = Release|Any CPU
+		{E6C4929C-59A7-4186-A964-0BA2D92171EE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
