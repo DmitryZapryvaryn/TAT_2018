@@ -47,12 +47,12 @@
     <Compile Include="Controller\Command\impl\AveragePriceCommand.cs" />
     <Compile Include="Controller\Command\impl\AveragePriceTypeCommand.cs" />
     <Compile Include="Controller\Command\impl\CountAllCommand.cs" />
-    <Compile Include="Controller\Command\impl\CountTypeCommand.cs" />
+    <Compile Include="Controller\Command\impl\CountTypesCommand.cs" />
     <Compile Include="Entity\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entity\Warehouse.cs" />
-    <Compile Include="Entity\ProductBuilder.cs" />
+    <Compile Include="ProductBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
